@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Sample E-commerce Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-title {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .product-price {
+            color: #e74c3c;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .product-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .product-link:hover {
+            background: #2980b9;
+        }
+        
+        .category {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .rating {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+        
+        .stock-status {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .in-stock {
+            color: #27ae60;
+        }
+        
+        .low-stock {
+            color: #e67e22;
+        }
+        
+        .out-of-stock {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+   <script 
+    src="http://localhost:8000/static/search-injector.js"
+    data-search-endpoint="http://localhost:8000/find-best-url">
+  </script> 
+    <div class="header">
+        <h1>TechStore</h1>
+        <p>Your one-stop shop for all tech gadgets</p>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card" data-product-id="1">
+            <div class="category">Smartphones</div>
+            <h2 class="product-title">iPhone 15 Pro Max</h2>
+            <div class="product-price">$1,199.99</div>
+            <div class="rating">★★★★★ (4.8/5)</div>
+            <div class="stock-status in-stock">In Stock</div>
+            <p class="product-description">The most advanced iPhone ever with titanium design, A17 Pro chip, and revolutionary camera system. Features a 6.7-inch Super Retina XDR display and up to 29 hours of video playback.</p>
+            <a href="/products/iphone-15-pro-max" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="2">
+            <div class="category">Laptops</div>
+            <h2 class="product-title">MacBook Air M3</h2>
+            <div class="product-price">$1,099.00</div>
+            <div class="rating">★★★★☆ (4.6/5)</div>
+            <div class="stock-status in-stock">In Stock</div>
+            <p class="product-description">Supercharged by the M3 chip, this laptop delivers exceptional performance and all-day battery life. Perfect for work, creativity, and everything in between with a stunning Liquid Retina display.</p>
+            <a href="/products/macbook-air-m3" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="3">
+            <div class="category">Gaming</div>
+            <h2 class="product-title">PlayStation 5 Console</h2>
+            <div class="product-price">$499.99</div>
+            <div class="rating">★★★★★ (4.9/5)</div>
+            <div class="stock-status low-stock">Low Stock</div>
+            <p class="product-description">Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, and 3D Audio technology. Play has no limits.</p>
+            <a href="/products/playstation-5" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="4">
+            <div class="category">Audio</div>
+            <h2 class="product-title">AirPods Pro (2nd Gen)</h2>
+            <div class="product-price">$249.00</div>
+            <div class="rating">★★★★★ (4.7/5)</div>
+            <div class="stock-status in-stock">In Stock</div>
+            <p class="product-description">Active Noise Cancellation, Transparency mode, and Personalized Spatial Audio. Up to 2x more noise cancellation than the previous generation with the H2 chip.</p>
+            <a href="/products/airpods-pro-2nd-gen" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="5">
+            <div class="category">Smart Home</div>
+            <h2 class="product-title">Amazon Echo Dot (5th Gen)</h2>
+            <div class="product-price">$49.99</div>
+            <div class="rating">★★★★☆ (4.4/5)</div>
+            <div class="stock-status in-stock">In Stock</div>
+            <p class="product-description">Smart speaker with Alexa featuring improved audio, smart home hub, and temperature sensor. Control your smart home devices with voice commands.</p>
+            <a href="/products/echo-dot-5th-gen" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="6">
+            <div class="category">Tablets</div>
+            <h2 class="product-title">iPad Pro 12.9-inch</h2>
+            <div class="product-price">$1,099.00</div>
+            <div class="rating">★★★★★ (4.8/5)</div>
+            <div class="stock-status out-of-stock">Out of Stock</div>
+            <p class="product-description">The most advanced iPad Pro ever with M2 chip, Liquid Retina XDR display, and all-day battery life. Perfect for professional creative work and productivity.</p>
+            <a href="/products/ipad-pro-12-9" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="7">
+            <div class="category">Wearables</div>
+            <h2 class="product-title">Apple Watch Series 9</h2>
+            <div class="product-price">$399.00</div>
+            <div class="rating">★★★★☆ (4.5/5)</div>
+            <div class="stock-status in-stock">In Stock</div>
+            <p class="product-description">Advanced health features, faster S9 chip, and brighter display. Track workouts, monitor health metrics, and stay connected right from your wrist.</p>
+            <a href="/products/apple-watch-series-9" class="product-link">View Details</a>
+        </div>
+
+        <div class="product-card" data-product-id="8">
+            <div class="category">Cameras</div>
+            <h2 class="product-title">Canon EOS R6 Mark II</h2>
+            <div class="product-price">$2,499.00</div>
+            <div class="rating">★★★★★ (4.9/5)</div>
+            <div class="stock-status low-stock">Low Stock</div>
+            <p class="product-description">Professional mirrorless camera with 24.2MP full-frame sensor, in-body image stabilization, and 4K video recording. Perfect for professional photography and videography.</p>
+            <a href="/products/canon-eos-r6-mark-ii" class="product-link">View Details</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #666;">
+        <p>&copy; 2024 TechStore. All rights reserved. | <a href="/about">About</a> | <a href="/contact">Contact</a> | <a href="/privacy">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
